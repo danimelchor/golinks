@@ -1,0 +1,4 @@
+(executable
+ (public_name golinks)
+ (name main)
+ (libraries golinks caqti-driver-sqlite3 dream))
