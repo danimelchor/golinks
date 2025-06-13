@@ -1,2 +1,16 @@
 (library
- (name golinks))
+ (name templates)
+ (public_name golinks.templates)
+ (libraries dream)
+ (modules templates))
+
+(library
+ (name queries)
+ (public_name golinks.queries)
+ (libraries caqti-driver-sqlite3)
+ (modules queries))
+
+(rule
+ (targets templates.ml)
+ (deps templates.eml.ml)
+ (action (run dream_eml %{workspace_root}/lib/%{deps})))

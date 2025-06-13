@@ -1,9 +1,4 @@
 (executable
  (public_name golinks)
  (name main)
- (libraries golinks caqti-driver-sqlite3 dream))
-
-(rule
- (targets main.ml)
- (deps main.eml.ml)
- (action (run dream_eml %{workspace_root}/bin/%{deps})))
+ (libraries templates queries caqti-driver-sqlite3 dream))
